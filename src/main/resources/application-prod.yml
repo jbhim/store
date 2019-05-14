@@ -1,0 +1,22 @@
+# 数据库配置
+spring:
+  datasource:
+    password: ${mysql_password}
+    url: jdbc:mysql://amcjt.com:3306/jbhim?characterEncoding=utf-8&useSSL=false
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    #不加这句则默认为myisam引擎
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+# 服务
+server:
+  port: 80
+
+# 文件上传路径配置
+file:
+  # 静态资源对外暴露的访问路径
+  staticAccessPath: /static/files/**
+  #文件上传目录
+  uploadFolder: D:/develop/work/jbhim/public/files/

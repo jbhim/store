@@ -1,0 +1,16 @@
+# 数据库配置
+spring:
+  datasource:
+    password: 123456
+    url: jdbc:mysql://localhost:3306/jbhim?characterEncoding=utf-8&useSSL=false
+
+# 服务
+server:
+  port: 80
+
+# 文件上传路径配置
+file:
+  # 静态资源对外暴露的访问路径
+  staticAccessPath: /static/files/**
+  #文件上传目录
+  uploadFolder: D:/develop/work/jbhim/public/files/
