@@ -1,19 +1,5 @@
 # 数据库配置
 spring:
-  #邮箱配置
-  mail:
-    host: smtp.qq.com
-    username: 724721900@qq.com
-    #QQ邮箱的授权码
-    password: nfwapzuvndtvbcef
-    default-encoding: UTF-8
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-            required: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -39,7 +25,3 @@ file:
   #文件上传目录
   uploadFolder: D:/develop/work/jbhim/public/files/
 
-#设置一个邮件发送人
-jbhim:
-  mail:
-    sender: 724721900@qq.com

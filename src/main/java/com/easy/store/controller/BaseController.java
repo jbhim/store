@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 @Data
 public class BaseController {
+    public static final String LOGININFO = "loginInfo";
     private String rootPath;
     private HttpServletRequest request;
     private HttpServletResponse response;

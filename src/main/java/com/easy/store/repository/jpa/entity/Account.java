@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Table(name = "account")
 public class Account {
     @Id
+    @Column(length = 64)
     private String id;
     private String name;
     private String jobNum;

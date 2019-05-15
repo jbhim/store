@@ -13,27 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("api/order")
 @Slf4j
-public class UserController extends BaseController {
+public class OrderController extends BaseController {
     private final UserService userService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public OrderController(UserService userService) {
         this.userService = userService;
-    }
-
-    @PostMapping("login")
-    public ResultVO login(@RequestBody Account account) {
-        Account loginInfo = userService.loadUsernameAndPassword(account.getUsername(), account.getPassword());
-        loginInfo.setPassword(null);
-        getSession().setAttribute(LOGININFO, JSONUtils.toJSONString(loginInfo));
-        return ResultVO.success(loginInfo);
-    }
-
-    @PostMapping("sign")
-    public ResultVO test(@RequestBody Account account) {
-        return ResultVO.success(userService.save(account));
     }
 
 }
