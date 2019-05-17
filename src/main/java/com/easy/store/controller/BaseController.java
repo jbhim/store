@@ -1,5 +1,6 @@
 package com.easy.store.controller;
 
+import com.easy.store.repository.jpa.entity.Account;
 import lombok.Data;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -28,5 +29,13 @@ public class BaseController {
         this.cookies = request.getCookies();
         this.servletContext = session.getServletContext();
         this.rootPath = session.getServletContext().getRealPath("/files");
+    }
+
+    public Account getCurrentUserInfo() {
+        Account account = (Account) getSession().getAttribute(LOGININFO);
+        if (account != null) {
+            return account;
+        }
+        return null;
     }
 }

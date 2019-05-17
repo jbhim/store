@@ -14,14 +14,14 @@ import java.math.BigDecimal;
  */
 @Data
 @Entity
-@Table(name = "order")
+@Table(name = "shop_car")
 public class ShopCar {
     @Id
     @Column(length = 64)
     private String id;
     private String goodId;
     //商品数量
-    private String goodCount;
+    private int goodCount;
     private String userId;
     private BigDecimal price;
 }

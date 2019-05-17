@@ -2,6 +2,8 @@ package com.easy.store.model;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 /**
  * @author jbhim
  * @date 2019/5/16/016.
@@ -12,9 +14,9 @@ public class ShopCarModel {
 
     private String name;
 
-    private String price;
+    private BigDecimal price;
 
-    private String count;
+    private int count;
 
     private String src;
 }

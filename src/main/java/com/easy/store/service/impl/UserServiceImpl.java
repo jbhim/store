@@ -27,8 +27,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Account loadUsernameAndPassword(String username, String password) {
-        Optional<Account> byUsername = accountRepository.findByUsername(username);
+    public Account loadUsernameAndPassword(String username, String phone, String password) {
+        Optional<Account> byUsername = accountRepository.findByUsernameOrPhone(username, phone);
         Account account = byUsername.orElseThrow(() -> new CustomException(ResultEnum.USER_NOT_FOUND));
         if (!account.getPassword().equalsIgnoreCase(DigestUtils.md5DigestAsHex(password.getBytes()))) {
             throw new CustomException(ResultEnum.PASSWORD_ERROR);

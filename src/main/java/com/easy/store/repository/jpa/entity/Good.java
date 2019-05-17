@@ -6,24 +6,24 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
+import java.util.Date;
 
-/**
- * @author jbhim
- * @date 2019/5/15/015.
- */
 @Data
 @Entity
-@Table(name = "shop")
+@Table(name = "goods")
 public class Good {
     @Id
     @Column(length = 64)
     private String id;
     private String name;
-    private String oldPrice;
-    private String newPrice;
-    private String xsPrice;
-    private String count;
-    private String restCount;
+    private BigDecimal oldPrice;
+    private BigDecimal newPrice;
+    private BigDecimal xsPrice;
+    private int count;
+    private int restCount;
     private String src;
+    private int sum;
     private String imgs;
+    private Date time;
 }

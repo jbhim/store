@@ -16,7 +16,6 @@ public class Account {
     @Column(length = 64)
     private String id;
     private String name;
-    private String jobNum;
     @Column(unique = true)
     private String phone;
     private String email;
